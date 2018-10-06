@@ -17,7 +17,7 @@
 <div id="send_msg_btn" class="btn">Send</div>
 <script src="php_packages/SocketServer/websocket_client.js"></script>
 <script>
-  WebSocketClient = new WebSocketClient('ws://localhost:8888', {
+  var WebSocketClient = new WebSocketClient('ws://localhost:8888', {
     buttons: {
       'connect': '#connect_btn',
       'disconnect': '#disconnect_btn',
