@@ -1,0 +1,29 @@
+.btn{
+  cursor:pointer;
+  padding:10px 20px;
+  display: inline-block;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#messages_box{
+  margin: 10px 0 10px 0;
+  box-shadow: 0 0 5px grey;
+  padding: 10px 0 10px 0;
+}
+
+#messages_box:empty{
+  padding: 0;
+}
+
+#messages_box div {
+  margin: 5px;
+  padding-left: 5px;
+  border-bottom: 1px solid #c5c5cc;
+}
+
+#client_message{
+  padding:10px;
+}

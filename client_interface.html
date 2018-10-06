@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="php_packages/SocketServer/client_interface.css">
+  <title>Websocket Client</title>
+</head>
+<body>
+<div id="connect_btn" class="btn">Connect</div>
+<div id="disconnect_btn" class="btn">Disconnect</div>
+<h2>Messages:</h2>
+<div id="messages_box"></div>
+<textarea name="message" id="client_message" cols="30" rows="10" placeholder="enter a message"></textarea>
+<br>
+<div id="send_msg_btn" class="btn">Send</div>
+<script src="php_packages/SocketServer/websocket_client.js"></script>
+<script>
+  WebSocketClient = new WebSocketClient('ws://localhost:8888', {
+    buttons: {
+      'connect': '#connect_btn',
+      'disconnect': '#disconnect_btn',
+      'sendMessage': '#send_msg_btn'
+    },
+    message_box: {
+      'element': '#messages_box'
+    },
+    message: {
+      'element': '#client_message'
+    }
+  });
+</script>  
+</body>
+</html>
