@@ -3,15 +3,37 @@ namespace Starblust;
 
 class SocketServer{
 
+  /** @var int LogConsole */
   const LogConsole = 0;
+  /** @var int LogFile */
   const LogFile = 1;
+  
+  /** @var int $time_limit seconds
+   * socket server loop time limit
+   */
+  private static $time_limit = 60;  
 
+  /** @var array $params
+   * socket server creation parameters
+  */
   private static $params = [
     'host' => '127.0.0.1',
     'port' => 8888
   ];
+
+  /** @var resource $socket 
+   * 
+  */
   private static $socket = null;
+
+  /** @var string $magic_key
+   * string that needed when does handshake
+   */
   private static $magic_key = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
+
+  /** @var string $log_file
+   * log filename path
+   */
   private static $log_file = 'socket_server.log';
 
   /**
@@ -75,7 +97,7 @@ class SocketServer{
    **/
   private static function socket_processing()
   {
-    $time_limit = \time() + 40;
+    $time_limit = \time() + self::$time_limit;
     $clients = [];
     while (\time() < $time_limit) {
 
